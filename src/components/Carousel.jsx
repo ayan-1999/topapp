@@ -9,6 +9,7 @@ const EarthElementData = [
     element: "Aqua",
     description:
       "Dive into our curated selection of products designed to supercharge your skincare needs.",
+    ctaText: "Explore",
     ctaAvailable: true,
     ctaPath: "/aqua",
   },
@@ -16,47 +17,41 @@ const EarthElementData = [
     icon: Logo.air,
     element: "Air",
     description:
-      "Dive into our curated selection of products designed to supercharge your skincare needs.",
-    ctaAvailable: true,
+      "Elevate your beauty routine with our Air-inspired collection, promoting a breath of fresh, revitalizing ingredients.",
+    ctaText: "Coming Soon",
+    ctaAvailable: false,
     ctaPath: "/air",
   },
   {
     icon: Logo.fire,
     element: "Fire",
     description:
-      "Dive into our curated selection of products designed to supercharge your skincare needs.",
-    ctaAvailable: true,
-    ctaPath: "/air",
+      "Ignite your radiance with our Fire-themed products, delivering a powerful blend for a vibrant and glowing skincare experience.",
+    ctaText: "Coming Soon",
+    ctaAvailable: false,
+    ctaPath: "/fire",
   },
   {
-    icon: Logo.air,
+    icon: Logo.earth,
     element: "Earth",
     description:
-      "Dive into our curated selection of products designed to supercharge your skincare needs.",
-    ctaAvailable: true,
-    ctaPath: "/air",
+      "Ground your beauty routine with our Earth-inspired collection.",
+    ctaText: "Coming Soon",
+    ctaAvailable: false,
+    ctaPath: "/earth",
   },
   {
-    icon: Logo.air,
+    icon: Logo.sky,
     element: "Sky",
     description:
-      "Dive into our curated selection of products designed to supercharge your skincare needs.",
-    ctaAvailable: true,
-    ctaPath: "/air",
+      "Elevate your skincare experience with our Sky-inspired collection.",
+    ctaText: "Coming Soon",
+    ctaAvailable: false,
+    ctaPath: "/sky",
   },
 ];
 
-export default function Carousel() {
-  const [index, setIndex] = useState(0);
-
-  const handlePrev = () => {
-    setIndex((prev) => Math.max(prev - 1, 0));
-  };
-
-  const handleNext = () => {
-    setIndex((prev) => Math.min(prev + 1, EarthElementData.length - 3));
-  };
-
+export default function Carousel({ index }) {
   return (
     <Box sx={{ width: "100%", position: "relative", overflow: "hidden" }}>
       {/* Slider */}
@@ -79,34 +74,6 @@ export default function Carousel() {
           </Box>
         ))}
       </Box>
-
-      {/* Left Button */}
-      <Button
-        onClick={handlePrev}
-        disabled={index === 0}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: 10,
-          transform: "translateY(-50%)",
-        }}
-      >
-        ◀
-      </Button>
-
-      {/* Right Button */}
-      <Button
-        onClick={handleNext}
-        disabled={index >= EarthElementData.length - 3}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          right: 10,
-          transform: "translateY(-50%)",
-        }}
-      >
-        ▶
-      </Button>
     </Box>
   );
 }

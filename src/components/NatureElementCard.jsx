@@ -1,4 +1,5 @@
-import { Box, Icon, Typography, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { theme } from "../utils/theme";
 
 const NatureElementCard = ({ data }) => {
@@ -25,17 +26,17 @@ const NatureElementCard = ({ data }) => {
   }
 
   return (
-    <Box
-      width={"390px"}
-      height={"450px"}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        borderRadius: "60px 8px",
-        bgcolor: theme.colors.white,
-        padding: "64px 60px",
-      }}
-    >
+      <Box
+        width={"390px"}
+        height={"450px"}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          borderRadius: "48px 12px 48px 12px",
+          bgcolor: theme.colors.white,
+          padding: "64px 60px",
+        }}
+      >
       <Box
         sx={{
           bgcolor: bgColor,
@@ -71,6 +72,23 @@ const NatureElementCard = ({ data }) => {
       >
         {data.description}
       </Typography>
+
+      <Button
+        disableRipple
+        sx={{
+          color: theme.colors.landingHeading,
+          textTransform: "none",
+          fontWeight: 600,
+          fontSize: "15px",
+          padding: 0,
+          justifyContent: "flex-start",
+          mt: "auto", // Align at bottom
+          "&:hover": { backgroundColor: "transparent", opacity: 0.8 },
+        }}
+        endIcon={data.ctaAvailable ? <ArrowForwardIcon fontSize="small" /> : null}
+      >
+        {data.ctaText}
+      </Button>
     </Box>
   );
 };
