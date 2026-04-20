@@ -12,7 +12,8 @@ export const theme = {
     fire: "#FEF5E9",
     earth:"#674313",
     sky:"#66b0d3",
-    footerBg:"#C9E4CA"
+    footerBg:"#C9E4CA",
+    divider:"#4f6b50"
   },
   fontSize: {
     xs: 14,
