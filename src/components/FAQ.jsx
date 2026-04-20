@@ -35,52 +35,99 @@ const FAQ = () => {
 
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           gap: "24px",
-          alignItems: "start",
+          alignItems: "flex-start",
         }}
       >
-        {faqs.map((question, index) => (
-          <Accordion
-            key={index}
-            disableGutters
-            elevation={0}
-            sx={{
-              border: "1px solid #eaeaea",
-              borderRadius: "8px",
-              background: "transparent",
-              "&:before": {
-                display: "none",
-              },
-              "&.Mui-expanded": {
-                 margin: 0,
-              }
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: theme.colors.font_2 }} />}
-              sx={{ padding: "12px 24px" }}
+        {/* Left Column */}
+        <Box sx={{ flex: 1, display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
+          {faqs.slice(0, Math.ceil(faqs.length / 2)).map((question, index) => (
+            <Accordion
+              key={`left-${index}`}
+              disableGutters
+              elevation={0}
+              sx={{
+                border: "1px solid #eaeaea",
+                borderRadius: "8px",
+                background: "transparent",
+                "&:before": {
+                  display: "none",
+                },
+                "&.Mui-expanded": {
+                  margin: 0,
+                },
+              }}
             >
-              <Typography
-                sx={{
-                  color: theme.colors.font_2,
-                  fontWeight: 500,
-                  fontSize: "16px",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: theme.colors.font_2 }} />}
+                sx={{ padding: "12px 24px" }}
               >
-                {question}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={{ padding: "0 24px 24px" }}>
-              <Typography sx={{ color: theme.colors.font_2, lineHeight: 1.6 }}>
-                Organic skincare products are made with plant-based ingredients 
-                grown without the use of artificial chemicals, pesticides, or fertilizers. 
-                They are designed to nourish the skin naturally.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-        ))}
+                <Typography
+                  sx={{
+                    color: theme.colors.font_2,
+                    fontWeight: 500,
+                    fontSize: "16px",
+                  }}
+                >
+                  {question}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ padding: "0 24px 24px" }}>
+                <Typography sx={{ color: theme.colors.font_2, lineHeight: 1.6 }}>
+                  Organic skincare products are made with plant-based ingredients
+                  grown without the use of artificial chemicals, pesticides, or fertilizers.
+                  They are designed to nourish the skin naturally.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </Box>
+
+        {/* Right Column */}
+        <Box sx={{ flex: 1, display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
+          {faqs.slice(Math.ceil(faqs.length / 2)).map((question, index) => (
+            <Accordion
+              key={`right-${index}`}
+              disableGutters
+              elevation={0}
+              sx={{
+                border: "1px solid #eaeaea",
+                borderRadius: "8px",
+                background: "transparent",
+                "&:before": {
+                  display: "none",
+                },
+                "&.Mui-expanded": {
+                  margin: 0,
+                },
+              }}
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: theme.colors.font_2 }} />}
+                sx={{ padding: "12px 24px" }}
+              >
+                <Typography
+                  sx={{
+                    color: theme.colors.font_2,
+                    fontWeight: 500,
+                    fontSize: "16px",
+                  }}
+                >
+                  {question}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ padding: "0 24px 24px" }}>
+                <Typography sx={{ color: theme.colors.font_2, lineHeight: 1.6 }}>
+                  Organic skincare products are made with plant-based ingredients
+                  grown without the use of artificial chemicals, pesticides, or fertilizers.
+                  They are designed to nourish the skin naturally.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
