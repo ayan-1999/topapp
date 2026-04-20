@@ -178,10 +178,10 @@ const Landing = () => {
       <PremiumSelection />
       <WithUs/>
       <Awards />
+      <Blog />
       <Testimonials />
       <Subscribe />
       <FAQ />
-      <Blog />
       <Footer/>
     </>
   );
