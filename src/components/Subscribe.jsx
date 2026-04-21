@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, InputBase } from "@mui/material";
 import { theme } from "../utils/theme";
+import { Image } from "../assets/ImageLinks";
 
 const Subscribe = () => {
   return (
@@ -20,6 +21,16 @@ const Subscribe = () => {
           overflow: "hidden",
         }}
       >
+        <Box
+              component="img"
+              src={Image.pattern1}
+              alt="Pattern"
+              sx={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+              }}
+            />
          {/* Abstract background curves are omitted per no-image constraints */}
         
         <Box sx={{ width: { xs: "100%", md: "60%" }, zIndex: 2, position: "relative" }}>
@@ -27,7 +38,7 @@ const Subscribe = () => {
             sx={{
               color: theme.colors.fontBlack,
               fontWeight: 600,
-              fontSize: "48px",
+              fontSize: "42px",
               lineHeight: 1.2,
               marginBottom: "16px",
             }}
