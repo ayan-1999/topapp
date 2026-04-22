@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Box, Typography, IconButton, Button, Rating } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { theme } from "../utils/theme";
+import { Image, Logo } from "../assets/ImageLinks";
 
 const products = [
   {
     id: 1,
+    image: Image.product1,
     title: "Keratin Oil",
     price: "199.00",
     rating: 4,
@@ -15,6 +18,7 @@ const products = [
   },
   {
     id: 2,
+    image: Logo.product2,
     title: "Dead Sea Shampoo",
     price: "699.00",
     rating: 4,
@@ -22,6 +26,7 @@ const products = [
   },
   {
     id: 3,
+    image: Logo.product3,
     title: "Ylang Ylang",
     price: "499.00",
     rating: 4,
@@ -91,7 +96,7 @@ const PremiumSelection = () => {
         <Box
           sx={{
             display: "inline-flex",
-            backgroundColor: "#f2f6f7",
+            backgroundColor: theme.colors.grey1,
             borderRadius: "40px",
             padding: "4px",
           }}
@@ -108,7 +113,9 @@ const PremiumSelection = () => {
                 fontWeight: 500,
                 fontSize: theme.fontSize.sm,
                 backgroundColor:
-                  activeTab === tab ? theme.colors.landingHeading : "transparent",
+                  activeTab === tab
+                    ? theme.colors.landingHeading
+                    : "transparent",
                 color:
                   activeTab === tab ? theme.colors.white : theme.colors.font_2,
                 "&:hover": {
@@ -127,14 +134,13 @@ const PremiumSelection = () => {
 
       {/* Cards Section */}
       <Box sx={{ position: "relative" }}>
-        
         {/* Left Arrow Button */}
         <IconButton
           onClick={handlePrev}
           sx={{
             position: "absolute",
             left: "-2%",
-            top: "160px", // middle of the 320px image placeholder
+            top: "180px", // middle of the 320px image placeholder
             transform: "translateY(-50%)",
             zIndex: 2,
             backgroundColor: theme.colors.white,
@@ -170,95 +176,111 @@ const PremiumSelection = () => {
                   flex: "0 0 calc((100% - 72px) / 4)",
                   borderRadius: "8px",
                   boxSizing: "border-box",
-              }}
-            >
-              {/* Image Placeholder */}
-              <Box
-                sx={{
-                  backgroundColor: "#e0e0e0",
-                  width: "100%",
-                  height: "320px",
-                  borderRadius: "16px",
-                  marginBottom: "16px",
-                  // To cover the gap created by border when selected
-                  margin: "0 0 16px 0",
-                  width: "100%"
                 }}
-              />
-              
-              {/* Product Info */}
-              <Box sx={{ padding: "0 8px" }}>
+              >
+                {/* Image Placeholder */}
                 <Box
                   sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "8px",
+                    backgroundImage: `url(${product.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    width: "100%",
+                    height: "360px",
+                    borderRadius: "16px",
+                    marginBottom: "16px",
+                    // To cover the gap created by border when selected
+                    margin: "0 0 16px 0",
                   }}
-                >
+                />
+
+                {/* Product Info */}
+                <Box sx={{ padding: "0 8px" }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: theme.colors.fontBlack,
+                        fontWeight: 500,
+                        fontSize: theme.fontSize.md,
+                      }}
+                    >
+                      {product.title}
+                    </Typography>
+                    <Box
+                      sx={{
+                        cursor: "pointer",
+                        display: "flex",
+                        "&:hover .border-icon": { display: "none" },
+                        "&:hover .filled-icon": { display: "block" },
+                        "& .border-icon": { color: theme.colors.font_2 },
+                        "& .filled-icon": { color: "red", display: "none" },
+                      }}
+                    >
+                      <FavoriteBorderIcon className="border-icon" />
+                      <FavoriteIcon className="filled-icon" />
+                    </Box>
+                  </Box>
+
                   <Typography
                     sx={{
                       color: theme.colors.fontBlack,
-                      fontWeight: 500,
-                      fontSize: theme.fontSize.md,
+                      fontWeight: 600,
+                      fontSize: "22px",
+                      marginBottom: "12px",
                     }}
                   >
-                    {product.title}
+                    ₹ {product.price}
                   </Typography>
-                  <FavoriteBorderIcon sx={{ color: theme.colors.font_2, cursor: "pointer" }} />
-                </Box>
-                
-                <Typography
-                  sx={{
-                    color: theme.colors.fontBlack,
-                    fontWeight: 600,
-                    fontSize: "22px",
-                    marginBottom: "12px",
-                  }}
-                >
-                  ₹ {product.price}
-                </Typography>
-                
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    marginBottom: "20px",
-                  }}
-                >
-                  <Rating
-                    value={product.rating}
-                    readOnly
-                    size="small"
-                    sx={{ color: "#fbb614" }}
-                  />
-                  <Typography
+
+                  <Box
                     sx={{
-                      color: theme.colors.font_2,
-                      fontSize: "14px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      marginBottom: "20px",
                     }}
                   >
-                    {product.reviews} Reviews
-                  </Typography>
+                    <Rating
+                      value={product.rating}
+                      readOnly
+                      size="small"
+                      sx={{ color: theme.colors.yellow }}
+                    />
+                    <Typography
+                      sx={{
+                        color: theme.colors.font_2,
+                        fontSize: "14px",
+                      }}
+                    >
+                      {product.reviews} Reviews
+                    </Typography>
+                  </Box>
+
+                  <Button
+                    sx={{
+                      textTransform: "none",
+                      color: theme.colors.landingHeading,
+                      fontWeight: 600,
+                      fontSize: "15px",
+                      padding: 0,
+                      "&:hover": {
+                        backgroundColor: "transparent",
+                        opacity: 0.8,
+                      },
+                    }}
+                    endIcon={<ArrowForwardIcon fontSize="small" />}
+                  >
+                    Add to Cart
+                  </Button>
                 </Box>
-                
-                <Button
-                  sx={{
-                    textTransform: "none",
-                    color: theme.colors.landingHeading,
-                    fontWeight: 600,
-                    fontSize: "15px",
-                    padding: 0,
-                    "&:hover": { backgroundColor: "transparent", opacity: 0.8 },
-                  }}
-                  endIcon={<ArrowForwardIcon fontSize="small" />}
-                >
-                  Add to Cart
-                </Button>
               </Box>
-            </Box>
-          ))}
+            ))}
           </Box>
         </Box>
 
@@ -268,14 +290,15 @@ const PremiumSelection = () => {
           sx={{
             position: "absolute",
             right: "-2%",
-            top: "160px", // middle of the 320px image placeholder
+            top: "180px", // middle of the 320px image placeholder
             transform: "translateY(-50%)",
             zIndex: 2,
             backgroundColor: theme.colors.white,
             border: `1px solid ${theme.colors.landingHeading}`,
             color: theme.colors.landingHeading,
             opacity: currentIndex >= products.length - cardsToShow ? 0.3 : 1,
-            pointerEvents: currentIndex >= products.length - cardsToShow ? "none" : "auto",
+            pointerEvents:
+              currentIndex >= products.length - cardsToShow ? "none" : "auto",
             boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
             "&:hover": {
               backgroundColor: "#f4f8f8",
@@ -286,6 +309,29 @@ const PremiumSelection = () => {
         >
           <ArrowForwardIcon />
         </IconButton>
+      </Box>
+
+      {/* Bottom Button */}
+      <Box sx={{ textAlign: "center" }}>
+        <Button
+          variant="outlined"
+          sx={{
+            my: 8,
+            borderColor: theme.colors.landingHeading,
+            color: theme.colors.landingHeading,
+            borderRadius: "32px",
+            padding: "8px 40px",
+            textTransform: "none",
+            fontWeight: 500,
+            fontSize: "16px",
+            "&:hover": {
+              borderColor: theme.colors.landingHeading,
+              backgroundColor: "rgba(2, 105, 107, 0.04)",
+            },
+          }}
+        >
+          View All
+        </Button>
       </Box>
     </Box>
   );
