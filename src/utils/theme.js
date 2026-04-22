@@ -13,7 +13,10 @@ export const theme = {
     earth:"#674313",
     sky:"#66b0d3",
     footerBg:"#C9E4CA",
-    divider:"#4f6b50"
+    divider:"#4f6b50",
+
+    grey1:"#EFF6F8",
+    yellow:"#FFBD38",
   },
   fontSize: {
     xs: 14,

@@ -12,7 +12,8 @@ import fireFooter from "./icons/firefooter.svg";
 import banner from "./images/banner.png";
 import companyIcon from "./images/logo.png";
 import withUs from "./images/withusimage.svg";
-import pattern1 from "./images/Pattern.png"
+import pattern1 from "./images/Pattern.png";
+import pattern2 from "./images/Pat2.png";
 
 export const Logo = {
   air,
@@ -32,4 +33,5 @@ export const Image = {
   companyIcon,
   withUs,
   pattern1,
+  pattern2,
 };
