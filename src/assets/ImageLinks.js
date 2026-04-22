@@ -15,6 +15,12 @@ import withUs from "./images/withusimage.svg";
 import pattern1 from "./images/Pattern.png";
 import pattern2 from "./images/Pat2.png";
 
+import product1 from "./images/prod1.png";
+import product2 from "./images/prod2.svg";
+import product3 from "./images/prod3.svg";
+
+
+
 export const Logo = {
   air,
   water,
@@ -26,6 +32,8 @@ export const Logo = {
   leafFooter,
   cloudFooter,
   fireFooter,
+  product2,
+  product3,
 };
 
 export const Image = {
@@ -34,4 +42,5 @@ export const Image = {
   withUs,
   pattern1,
   pattern2,
+  product1,
 };
