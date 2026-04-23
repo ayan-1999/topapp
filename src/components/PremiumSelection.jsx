@@ -188,7 +188,7 @@ const PremiumSelection = () => {
                     height: "360px",
                     borderRadius: "16px",
                     marginBottom: "16px",
-                    // To cover the gap created by border when selected
+                    // To cover the gap created by border when selected.
                     margin: "0 0 16px 0",
                   }}
                 />
