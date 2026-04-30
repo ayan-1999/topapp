@@ -25,9 +25,12 @@ import withUs from "./images/withusimage.svg";
 import pattern1 from "./images/Pattern.png";
 import pattern2 from "./images/Pat2.png";
 
-import product1 from "./images/prod1.png";
-import product2 from "./images/prod2.svg";
-import product3 from "./images/prod3.svg";
+import product1 from "./images/prod_1.png";
+import product2 from "./images/prod_2.png";
+import product3 from "./images/prod_3.png";
+import product4 from "./images/prod_4.png";
+  
+
 import award_1 from "./images/award_1.png"
 import award_2 from "./images/award_2.png"
 import award_3 from "./images/award_3.png"
@@ -55,8 +58,7 @@ export const Logo = {
   leafFooter,
   cloudFooter,
   fireFooter,
-  product2,
-  product3,
+
   withUs_1,
   withUs_2,
   withUs_3,
@@ -74,6 +76,9 @@ export const Image = {
   pattern1,
   pattern2,
   product1,
+  product2,
+  product3,
+  product4,
   award_1,
   award_2,
   award_3,

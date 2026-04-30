@@ -24,17 +24,17 @@ const awardsData = [
   {
     id: 4,
     text: '"Lorem ipsum dolor sit. Lacus nulla rhoncus varius enim velit pharetra varius integer scelerisque. tristiqu. Egestas non scelerisque nunc dui platea at"',
-    image: "https://placehold.co/200x280/F5F5F5/333?text=Certificate+2",
+    image: Image.award_1,
   },
   {
     id: 5,
     text: '"Lorem ipsum dolor sit. Lacus nulla rhoncus varius enim velit pharetra varius integer scelerisque. tristiqu. Egestas non scelerisque nunc dui platea at"',
-    image: "https://placehold.co/180x280/F5F5F5/333?text=Trophy+3",
+    image: Image.award_2,
   },
   {
     id: 6,
     text: '"Lorem ipsum dolor sit. Lacus nulla rhoncus varius enim velit pharetra varius integer scelerisque. tristiqu. Egestas non scelerisque nunc dui platea at"',
-    image: "https://placehold.co/190x280/F5F5F5/333?text=Trophy+4",
+    image: Image.award_3,
   },
 ];
 

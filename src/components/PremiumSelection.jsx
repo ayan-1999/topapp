@@ -18,7 +18,7 @@ const products = [
   },
   {
     id: 2,
-    image: Logo.product2,
+    image: Image.product2,
     title: "Dead Sea Shampoo",
     price: "699.00",
     rating: 4,
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 3,
-    image: Logo.product3,
+    image: Image.product3,
     title: "Ylang Ylang",
     price: "499.00",
     rating: 4,
@@ -34,6 +34,7 @@ const products = [
   },
   {
     id: 4,
+    image: Image.product4,
     title: "Lavender",
     price: "999.00",
     rating: 4,
@@ -41,6 +42,7 @@ const products = [
   },
   {
     id: 5,
+    image: Image.product1,
     title: "Lavender",
     price: "999.00",
     rating: 4,
