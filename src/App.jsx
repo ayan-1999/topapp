@@ -1,5 +1,7 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import Aqua from "./pages/aqua/Aqua";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -12,7 +14,10 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aqua" element={<Aqua />} />
+      </Routes>
     </ThemeProvider>
   );
 }

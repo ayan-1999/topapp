@@ -5,11 +5,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchIcon from "@mui/icons-material/Search";
 import { theme } from "../utils/theme";
 import { Image } from "../assets/ImageLinks";
+import { useNavigate } from "react-router-dom";
 
 const NavItems = [
   { label: "Gift sets", path: "/gift-sets" },
   {
     label: "Aqua",
+    path: "/aqua",
     children: ["Oceans", "Rivers", "Lakes"],
   },
   { label: "Earth", path: "/earth" },
@@ -26,6 +28,7 @@ const NavItems = [
 ];
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <Box
       margin={"20px 96px 0 96px"}
@@ -44,11 +47,13 @@ const Nav = () => {
       >
         {/* logo */}
         <Box
+          onClick={() => navigate("/")}
           sx={{
             height: 56,
             overflow: "hidden",
             display: "flex",
             alignItems: "center",
+            cursor: "pointer",
           }}
         >
           <Box
@@ -71,7 +76,11 @@ const Nav = () => {
           }}
         >
           {NavItems.map((item) => (
-            <Button key={item.label} sx={{ boxShadow: "none" }}>
+            <Button 
+              key={item.label} 
+              sx={{ boxShadow: "none" }}
+              onClick={() => { if (item.path) navigate(item.path); }}
+            >
               <Typography
                 fontSize={theme.fontSize.xs}
                 fontWeight={500}
