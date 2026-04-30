@@ -36,6 +36,10 @@ import blog_1 from "./images/blog_1.png"
 import blog_2 from "./images/blog_2.png"
 import blog_3 from "./images/blog_3.png"
 
+import testimonial_1 from "./images/testimonial_1.jpg"
+import testimonial_2 from "./images/testimonial_2.jpg"
+import testimonial_3 from "./images/testimonial_3.jpg"
+
 
 
 
@@ -76,4 +80,7 @@ export const Image = {
   blog_1,
   blog_2,
   blog_3,
+  testimonial_1,
+  testimonial_2,
+  testimonial_3,
 };

@@ -1,23 +1,27 @@
 import React from "react";
 import { Box, Typography, Button, Rating } from "@mui/material";
 import { theme } from "../utils/theme";
+import { Image } from "../assets/ImageLinks";
 
 const testimonialsData = [
   {
     id: 1,
     name: "Dianne Russell",
+    image: Image.testimonial_1,
     text: "I recently discovered Bio Valley, a natural skincare brand, and I'm so glad I did! I was looking for a product that was free from harsh chemicals and toxins, and Bio Valley fit the bill.",
     rating: 5,
   },
   {
     id: 2,
     name: "Dianne Russell",
+    image: Image.testimonial_2,
     text: "I recently discovered Bio Valley, a natural skincare brand, and I'm so glad I did! I was looking for a product that was free from harsh chemicals and toxins, and Bio Valley fit the bill.",
     rating: 5,
   },
   {
     id: 3,
     name: "Dianne Russell",
+    image: Image.testimonial_3,
     text: "I recently discovered Bio Valley, a natural skincare brand, and I'm so glad I did! I was looking for a product that was free from harsh chemicals and toxins, and Bio Valley fit the bill.",
     rating: 5,
   },
@@ -82,12 +86,15 @@ const Testimonials = () => {
           >
             {/* Avatar Placeholder */}
             <Box
+              component="img"
+              src={testimonial.image}
+              alt={testimonial.name}
               sx={{
                 width: "72px",
                 height: "72px",
                 borderRadius: "50%",
-                backgroundColor: "#e0e0e0", // grey placeholder
                 border: `3px solid ${theme.colors.landingHeading}`,
+                objectFit: "cover",
                 position: "absolute",
                 top: "-36px",
                 left: "50%",
