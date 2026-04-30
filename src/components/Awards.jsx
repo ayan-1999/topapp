@@ -3,22 +3,23 @@ import { Box, Typography, IconButton } from "@mui/material";
 import { theme } from "../utils/theme";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Image } from "../assets/ImageLinks";
 
 const awardsData = [
   {
     id: 1,
     text: '"Lorem ipsum dolor sit. Lacus nulla rhoncus varius enim velit pharetra varius integer scelerisque. tristiqu. Egestas non scelerisque nunc dui platea at"',
-    image: "https://placehold.co/200x280/F5F5F5/333?text=Certificate+1",
+    image: Image.award_1,
   },
   {
     id: 2,
     text: '"Lorem ipsum dolor sit. Lacus nulla rhoncus varius enim velit pharetra varius integer scelerisque. tristiqu. Egestas non scelerisque nunc dui platea at"',
-    image: "https://placehold.co/180x280/F5F5F5/333?text=Trophy+1",
+    image: Image.award_2,
   },
   {
     id: 3,
     text: '"Lorem ipsum dolor sit. Lacus nulla rhoncus varius enim velit pharetra varius integer scelerisque. tristiqu. Egestas non scelerisque nunc dui platea at"',
-    image: "https://placehold.co/190x280/F5F5F5/333?text=Trophy+2",
+    image: Image.award_3,
   },
   {
     id: 4,
@@ -91,7 +92,8 @@ const Awards = () => {
               bgcolor: theme.colors.landingHeading,
               color: "white",
               "&:hover": { bgcolor: "#025557" },
-              opacity: currentIndex >= awardsData.length - cardsToShow ? 0.3 : 1,
+              opacity:
+                currentIndex >= awardsData.length - cardsToShow ? 0.3 : 1,
               width: "48px",
               height: "48px",
               pointerEvents:
@@ -153,7 +155,7 @@ const Awards = () => {
                   maxWidth: "45%",
                   objectFit: "contain",
                   borderRadius: "8px",
-                  boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
+                  
                 }}
               />
             </Box>

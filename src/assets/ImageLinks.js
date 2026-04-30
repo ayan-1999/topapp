@@ -28,6 +28,14 @@ import pattern2 from "./images/Pat2.png";
 import product1 from "./images/prod1.png";
 import product2 from "./images/prod2.svg";
 import product3 from "./images/prod3.svg";
+import award_1 from "./images/award_1.png"
+import award_2 from "./images/award_2.png"
+import award_3 from "./images/award_3.png"
+
+import blog_1 from "./images/blog_1.png"
+import blog_2 from "./images/blog_2.png"
+import blog_3 from "./images/blog_3.png"
+
 
 
 
@@ -62,4 +70,10 @@ export const Image = {
   pattern1,
   pattern2,
   product1,
+  award_1,
+  award_2,
+  award_3,
+  blog_1,
+  blog_2,
+  blog_3,
 };
