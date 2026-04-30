@@ -32,7 +32,7 @@ const EarthElementData = [
     ctaPath: "/fire",
   },
   {
-    icon: Logo.earth,
+    icon: Logo.leafFooter,
     element: "Earth",
     description:
       "Ground your beauty routine with our Earth-inspired collection.",
@@ -41,7 +41,7 @@ const EarthElementData = [
     ctaPath: "/earth",
   },
   {
-    icon: Logo.sky,
+    icon: Logo.cloudFooter,
     element: "Sky",
     description:
       "Elevate your skincare experience with our Sky-inspired collection.",

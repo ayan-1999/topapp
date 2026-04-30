@@ -8,13 +8,6 @@ import {
   IconButton,
   Divider,
 } from "@mui/material";
-
-// Importing dummy icons for Products as requested
-import WaterDropOutlinedIcon from "@mui/icons-material/WaterDropOutlined";
-import AirOutlinedIcon from "@mui/icons-material/Air";
-import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
-import YardOutlinedIcon from "@mui/icons-material/YardOutlined";
-import CloudOutlinedIcon from "@mui/icons-material/CloudOutlined";
 import { Logo } from "../assets/ImageLinks";
 
 // Icons for Get in Touch
