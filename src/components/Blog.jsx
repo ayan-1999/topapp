@@ -2,12 +2,14 @@ import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { theme } from "../utils/theme";
+import { Image } from "../assets/ImageLinks";
 
 const blogData = [
   {
     id: 1,
     date: "Bio Valley • 17 Jan 2023",
     title: "Natural Skincare Range",
+    image:Image.blog_1,
     description:
       "All our natural formulas are completely GMO free, we ensure what you get delivered is 100% natural and only goodness.",
   },
@@ -15,6 +17,7 @@ const blogData = [
     id: 2,
     date: "Bio Valley • 17 Jan 2023",
     title: "Natural Skincare Range",
+    image:Image.blog_2,
     description:
       "All our natural formulas are completely GMO free, we ensure what you get delivered is 100% natural and only goodness.",
   },
@@ -22,6 +25,7 @@ const blogData = [
     id: 3,
     date: "Bio Valley • 17 Jan 2023",
     title: "Natural Skincare Range",
+    image:Image.blog_3,
     description:
       "All our natural formulas are completely GMO free, we ensure what you get delivered is 100% natural and only goodness.",
   },
@@ -93,6 +97,9 @@ const Blog = () => {
           <Box key={blog.id} sx={{ display: "flex", flexDirection: "column" }}>
             {/* Image Placeholder */}
             <Box
+              component="img"
+              src={blog.image}
+              alt={blog.title}
               sx={{
                 width: "100%",
                 height: "240px",
