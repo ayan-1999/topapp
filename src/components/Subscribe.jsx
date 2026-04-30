@@ -18,13 +18,11 @@ const Subscribe = () => {
       <Box
         sx={{
           padding: "0 8%",
-          // Creates the two-tone background so the banner appears to overlap the sections
-          background: `linear-gradient(to bottom, #F2F7F7 50%, ${theme.colors.white} 50%)`,
         }}
       >
         <Box
           sx={{
-            backgroundColor: theme.colors.footerBg, // Usually #C9E4CA based on previous components
+            backgroundColor: theme.colors.footerBg,
             borderRadius: "16px",
             padding: "64px",
             position: "relative",
