@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Typography,
@@ -21,6 +22,8 @@ import Offers from "../../components/Offers";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import { theme } from "../../utils/theme";
+import FAQ from "../../components/FAQ";
+import Subscribe from "../../components/Subscribe";
 
 const products = [
   { id: 1, name: "Dead Sea Shampoo", price: "699.00", reviews: 4, rating: 4 },
@@ -32,6 +35,7 @@ const products = [
 ];
 
 const Aqua = () => {
+  const navigate = useNavigate();
   const [priceRange, setPriceRange] = useState([0, 5000]);
 
   const handlePriceChange = (event, newValue) => {
@@ -400,12 +404,14 @@ const Aqua = () => {
                   <Box>
                     {/* Dummy Product Image Placeholder */}
                     <Box
+                      onClick={() => navigate(`/product/${product.id}`)}
                       sx={{
                         width: "100%",
                         height: "350px",
                         backgroundColor: "#f5f5f5",
                         borderRadius: "16px",
                         mb: 2,
+                        cursor: "pointer",
                       }}
                     />
 
@@ -419,9 +425,11 @@ const Aqua = () => {
                       }}
                     >
                       <Typography
+                        onClick={() => navigate(`/product/${product.id}`)}
                         variant="subtitle1"
                         fontWeight="bold"
                         color={theme.colors.fontBlack}
+                        sx={{ cursor: "pointer" }}
                       >
                         {product.name}
                       </Typography>
@@ -478,6 +486,7 @@ const Aqua = () => {
                     {/* Buttons */}
                     <Box sx={{ display: "flex", gap: 2 }}>
                       <Button
+                        onClick={() => navigate(`/product/${product.id}`)}
                         variant="contained"
                         fullWidth
                         sx={{
@@ -495,6 +504,7 @@ const Aqua = () => {
                         Add To Cart
                       </Button>
                       <Button
+                        onClick={() => navigate(`/product/${product.id}`)}
                         variant="outlined"
                         fullWidth
                         sx={{
@@ -518,6 +528,9 @@ const Aqua = () => {
           </Box>
         </Box>
       </Box>
+      <FAQ />
+      <Subscribe />
+      <Box pb={16}></Box>
       <Footer />
     </>
   );
